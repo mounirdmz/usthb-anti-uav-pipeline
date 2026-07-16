@@ -2,7 +2,7 @@
 
 Real-time, modular drone detection and tracking system operating on both **RGB and infrared** video streams — built as a Master's final year thesis project (PFE) at USTHB, Faculty of Electrical Engineering, Department of Telecommunications.
 
->  Full thesis (French, with English abstract): ![link to thesis PDF](docs/Mémoire Ground-to-Air Vision-Based UAV Detection and Tracking using Deep Learning.pdf)
+>  Full thesis (French, with English abstract): [Mémoire (PDF)](<docs/Mémoire Ground-to-Air Vision-Based UAV Detection and Tracking using Deep Learning.pdf>)
 >  USTHB — Networks & Telecommunications, 2026
 >  Authors: Alicherif Maamer Mounir, Moussaoui Abdelrachid
 >  Supervised by Dr. Boussad Azmedroub
