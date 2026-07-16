@@ -1,0 +1,38 @@
+# Datasets (link in README instead)
+data/
+datasets/
+*.zip
+*.tar
+*.tar.gz
+
+# Large model weights (use GitHub Releases instead)
+weights/*.pt
+weights/*.pth
+weights/*.onnx
+*.pt
+*.pth
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Training runs / logs
+runs/
+wandb/
+*.log
+
+# OS/editor junk
+.DS_Store
+.vscode/
+.idea/
+
+# Large media (keep only small compressed demo gifs tracked manually)
+demos/videos/*.mp4
+!demos/gifs/*.gif
