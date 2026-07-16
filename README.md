@@ -2,9 +2,10 @@
 
 Real-time, modular drone detection and tracking system operating on both **RGB and infrared** video streams — built as a Master's final year thesis project (PFE) at USTHB, Faculty of Electrical Engineering, Department of Telecommunications.
 
-> 📄 Full thesis (French, with English abstract): [link to thesis PDF]
-> 🎓 USTHB — Networks & Telecommunications, 2026
-> 👥 Authors: [Your name], [Teammate's name] — Supervised by Dr. Boussad Azmedroub
+>  Full thesis (French, with English abstract): [link to thesis PDF]
+>  USTHB — Networks & Telecommunications, 2026
+>  Authors: Alicherif Maamer Mounir, Moussaoui Abdelrachid
+>  Supervised by Dr. Boussad Azmedroub
 
 ---
 
@@ -19,6 +20,22 @@ It is built around a **single shared YOLOv11s detector**, feeding into two dedic
 
 Sharing one detector across both pipelines was a deliberate design choice — it isolates the tracking module's contribution during evaluation, removing detection as a confounding variable.
 
+![Pipeline Architecture](docs/figures/fig_pipeline_systeme.png)
+![UAVTracker FSM](docs/figures/fig_fsm_diagram.png)
+
+## Demos
+
+**Multi-drone tracking (GIFs):**
+
+![ByteTrack MOT Demo](demo/gifs/fig_mot_bytetrack.gif)
+![OC-SORT MOT Demo](demo/gifs/fig_mot_ocsort.gif)
+
+**Video demos (click to play):**
+- 🎥 [Easy scenario](demo/gifs/demo_easy.mp4)
+- 🎥 [Medium scenario](demo/gifs/demo_medium.mp4)
+- 🎥 [Hard scenario](demo/gifs/demo_hard.mp4)
+- 🎥 [Full tracker comparison](<demo/gifs/Tracker Comparison.mp4>)
+
 ## Key Results
 
 ### Detection (YOLOv11s)
@@ -28,6 +45,8 @@ Sharing one detector across both pipelines was a deliberate design choice — it
 | Unified | DUT test | 0.9177 | 0.6368 | 0.9210 | 0.8563 |
 | Unified | RGBT IR val | 0.9929 | 0.6424 | 0.9915 | 0.9879 |
 | Unified | RGBT Vis val | 0.9853 | 0.6753 | 0.9621 | 0.9792 |
+
+![Detection Results — Infrared](results/fig_X3_detection_grid_ir.png)
 
 ### SOT Benchmark (DUT tracking, 20 sequences, 24,804 frames)
 | Tracker | Success Rate | IoU | FPS |
@@ -45,6 +64,8 @@ Sharing one detector across both pipelines was a deliberate design choice — it
 | OC-SORT | 0.7561 | 0.5188 | 63.4 |
 
 All configurations exceed the real-time constraint of 25 FPS.
+
+![ByteTrack vs OC-SORT](<results/fig_X4_bt_vs_ocsort_qualitative (1).png>)
 
 ## Dataset
 
@@ -66,10 +87,11 @@ Trained weights are also published on Kaggle: [`exp-v11s`](https://www.kaggle.co
 │   ├── notebook_C_sot_evaluation.py
 │   ├── notebook_D_mot_evaluation.py
 │   └── notebook_E_figures_generation.py
-├── demos/
-│   ├── videos/
-│   └── gifs/
-└── docs/figures/                        # key figures from the thesis
+├── demo/
+│   └── gifs/                            # demo_easy/medium/hard.mp4, Tracker Comparison.mp4,
+│                                         # fig_mot_bytetrack.gif, fig_mot_ocsort.gif
+├── docs/figures/                        # architecture & FSM diagrams
+└── results/                             # detection & tracking result figures
 ```
 
 ## Reproducing the Results
@@ -113,7 +135,7 @@ A (dataset audit) → B (detector training) → C (SOT evaluation) → D (MOT ev
 If you use this work, please cite the thesis:
 
 ```
-[Your Name], [Teammate's Name]. "USTHB Anti-UAV Pipeline: Ground-to-Air Vision-Based
+Alicherif Maamer Mounir, Moussaoui Abdelrachid. "USTHB Anti-UAV Pipeline: Ground-to-Air Vision-Based
 UAV Detection and Tracking using Deep Learning." Master's thesis, USTHB, 2026.
 ```
 
